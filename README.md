@@ -2,7 +2,7 @@ This is a python backend application used for predicting the maintenance of nthe
 there are 3 datasets provided for training the model and then generating the maintenance date by using rooms numbers.
 
 How to run the python code:
-.venv\scripts\activate.bat (for activating the virtual env)
+.venv\scripts\activate.bat (for activating the virtual env),
 pip install -r requirements.txt (for installing all the required dependencies)
  
 
