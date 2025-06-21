@@ -1,6 +1,11 @@
 This is a python backend application used for predicting the maintenance of nthe appliances used in the rooms, 
 there are 3 datasets provided for training the model and then generating the maintenance date by using rooms numbers.
 
+How to run the python code:
+.venv\scripts\activate.bat (for activating the virtual env)
+pip install -r requirements.txt (for installing all the required dependencies)
+ 
+
 How to Import and Use in Postman:
 Copy the entire JSON content from the Postman Json.txt.
 Open Postman.
