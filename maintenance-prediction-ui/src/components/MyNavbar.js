@@ -35,7 +35,7 @@ function MyNavbar() {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto my-2 my-lg-0" navbarScroll>
             <Nav.Link href="/dashboard"><TbLayoutDashboardFilled className="me-1" /> Maintenance Dashboard</Nav.Link>
-            <Nav.Link href='/scheduled-maintenance'><AiFillSchedule className='me-1 '/>Scheduled Maintenance</Nav.Link>
+            <Nav.Link href='/scheduled-maintenance'><AiFillSchedule className='me-1 '/> Scheduled Maintenance</Nav.Link>
             <Nav.Link href="/upcoming-maintenance"><FaTools className="me-1" /> Upcoming Maintenance</Nav.Link>
           </Nav>
           <Form className="d-flex" onSubmit={handleSearch}>
