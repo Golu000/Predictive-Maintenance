@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "cc8643e0-b1e9-4ece-abeb-49bcc87c79cb",
+		"name": "Predictive Maintenance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Train Model",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/2137131/Downloads/JW Marriott (1).csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8085/maintenance/train",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"maintenance",
+						"train"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Room Number\": 2000\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8085/maintenance/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"maintenance",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dashboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/maintenance/dashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"maintenance",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "More Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/maintenance/device/info?room_no=2000&appliance_type=Lamp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"maintenance",
+						"device",
+						"info"
+					],
+					"query": [
+						{
+							"key": "room_no",
+							"value": "2000"
+						},
+						{
+							"key": "appliance_type",
+							"value": "Lamp"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upcoming-Maintenance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/maintenance/upcoming-maintenance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"maintenance",
+						"upcoming-maintenance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Choose Hotel Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hotel_name\" : \"jwmarriott\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/maintenance/choose-hotel-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"maintenance",
+						"choose-hotel-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upcoming-Weekly-Maintenance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/maintenance/upcoming-weekly-maintenance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"maintenance",
+						"upcoming-weekly-maintenance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Non-Room",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/maintenance/non-room-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"maintenance",
+						"non-room-data"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
