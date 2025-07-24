@@ -1,0 +1,261 @@
+/* Import Google Font - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap');
+
+/* GLOBAL BACKGROUND IMAGE */
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/marriottBackground.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Initial state of the navbar */
+.main-nav {
+    background-color: rgba(52, 58, 64, 0.8) !important; /* Dark grey with 80% opacity */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for background */
+
+    position: fixed;
+    top: 0px !important; /* Forces it to 35px, overriding anything else */
+    width: 100%; /* Ensure it spans full width */
+    z-index: 1040; /* Make sure it's below banner (2000) */
+}
+
+/* Add default horizontal padding for the container */
+.main-nav .container-fluid {
+    padding-left: 3rem !important; /* Default padding for container */
+    padding-right: 3rem !important; /* Default padding for container */
+    padding-top: 1rem !important;
+    padding-bottom: 1.5rem !important; /* Adjusted padding to prevent underline from touching the bottom */
+}
+
+
+/* Text color for all elements within the navbar initially */
+.main-nav .navbar-brand,
+.main-nav .nav-link,
+.main-nav .btn {
+    color: #f8f9fa !important; /* White */
+    transition: color 0.3s ease-in-out; /* Smooth transition for text color */
+}
+
+/* Specific styling for Navbar.Brand (title font) */
+.main-nav .navbar-brand {
+    font-family: 'Montserrat', sans-serif; /* Apply the chosen font */
+    font-size: 1.4rem; /* Make it larger for prominence */
+    font-weight: 500; /* Make it extra bold */
+    text-transform: uppercase; /* Optional: Make it all caps for a title look */
+    letter-spacing: 0.09em; /* Optional: Add slight spacing between letters */
+}
+
+
+/* Hover effect for the navbar */
+.main-nav:hover {
+    background-color: #ffffff !important; /* White on hover (no transparency here) */
+}
+
+/* Hover effect for text within the navbar */
+.main-nav:hover .nav-link { /* Modified: Removed .navbar-brand from this rule */
+    color: #212529 !important; /* Nav links turn black on navbar hover */
+}
+
+/* --- NEW: Specific hover color for Navbar.Brand --- */
+.main-nav:hover .navbar-brand {
+    color: #ff8d6b !important; /* Title turns orange on navbar hover */
+}
+/* --- END NEW --- */
+
+/* Placeholder text color for search input - ALWAYS BLACK */
+.main-nav .form-control::placeholder {
+    color: #212529 !important; /* Black placeholder */
+}
+
+/* Ensure the text typed into the search box is ALWAYS BLACK */
+.main-nav .form-control {
+    color: #212529 !important; /* Black text for typed input */
+}
+
+
+/* Specific styling for the search button */
+.main-nav .btn-outline-success {
+    border-color: #f8f9fa !important; /* White border initially */
+    color: #f8f9fa !important; /* White text initially */
+    background-color: transparent !important; /* Ensure initial background is transparent */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+}
+
+.main-nav:hover .btn-outline-success {
+    border-color: #212529 !important; /* Black border on hover */
+    color: #212529 !important; /* Black text on hover */
+    background-color: #ff8d6b !important; /* Orange background on hover */
+}
+
+/* Styles for Toggle Button */
+.main-nav .custom-toggler {
+    padding: 0.25rem 0.5rem; /* Smaller padding */
+    font-size: 0.875rem; /* Smaller font size for icon */
+    line-height: 1; /* Adjust line height */
+    border-radius: 0.2rem; /* Slightly rounded corners */
+    color: #f8f9fa; /* White icon color initially */
+    border-color: #f8f9fa; /* White border initially */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hover effect for the custom toggler */
+.main-nav:hover .custom-toggler {
+    color: #212529; /* Black icon color on navbar hover */
+    border-color: #212529; /* Black border on navbar hover */
+}
+
+/* For specific focus/active states if needed (optional) */
+.main-nav .custom-toggler:focus,
+.main-nav .custom-toggler:active {
+    box-shadow: none !important; /* Remove default focus outline if desired */
+    outline: none !important;
+}
+
+/* Ensure the toggle icon itself is visible on dark background */
+.main-nav .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28248, 249, 250, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Change toggler icon color on navbar hover */
+.main-nav:hover .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Minimized Navbar Alignment Fix */
+@media (max-width: 991.98px) { /* Applies to screens smaller than 'lg' breakpoint */
+    .main-nav .container-fluid {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .main-nav .navbar-brand {
+        margin-right: 0 !important;
+        margin-left: 0.5rem !important;
+        flex-grow: 0 !important;
+    }
+
+    .main-nav .navbar-toggler {
+        margin-right: 0 !important;
+    }
+
+    .main-nav:not(.show) .navbar-brand {
+        flex-grow: 0 !important;
+    }
+}
+
+/* Base styles for the Logo Image */
+.main-nav .navbar-logo {
+    height: 30px; /* Adjust as needed */
+    margin-right: 0.5rem; /* Space between logo and text */
+    filter: invert(0%) sepia(0%) saturate(7500%) hue-rotate(330deg) brightness(100%) contrast(100%); /* Initial state: white */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for the filter */
+}
+
+/* Hover effect for the Logo Image */
+.main-nav:hover .navbar-logo {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(330deg) brightness(0%) contrast(100%);
+}
+
+/* --- NavLink Underline Effect --- */
+.main-nav .nav-link {
+    position: relative;
+    padding-bottom: 0.25rem;
+    overflow: hidden;
+    margin-right: 1.5rem; /* Padding between nav links */
+    color: #f8f9fa !important; /* Ensure initial color is white */
+}
+
+.main-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #212529;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+.main-nav .nav-link:hover::after {
+    transform: translateX(0);
+}
+
+.main-nav:hover .nav-link::after {
+    background-color: #212529; /* Ensure black on main-nav hover */
+}
+
+.main-nav .nav-link:hover {
+    color: #212529 !important;
+}
+.main-nav:hover .nav-link {
+    color: #212529 !important;
+}
+
+
+/*CSS for Dashboard*/
+
+.dashboard-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.dashboard-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.dashboard-container .card {
+    border-radius: 0.75rem; /* Slightly rounded corners for cards */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.dashboard-container .card:hover {
+    transform: translateY(-5px); /* Lift card slightly on hover */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important; /* Enhanced shadow on hover */
+}
+
+/* Specific colors for card variants if you want to override Bootstrap defaults */
+.dashboard-container .card.bg-primary {
+    background-color: #007bff !important; /* Bootstrap primary blue */
+}
+.dashboard-container .card.bg-warning {
+    background-color: #ffc107 !important; /* Bootstrap warning yellow */
+    color: #333 !important; /* Darker text for better contrast on yellow */
+}
+.dashboard-container .card.bg-success {
+    background-color: #28a745 !important; /* Bootstrap success green */
+}
+.dashboard-container .card.bg-danger {
+    background-color: #dc3545 !important; /* Bootstrap danger red */
+}
+.dashboard-container .card.bg-info {
+    background-color: #17a2b8 !important; /* Bootstrap info cyan */
+}
+
+.dashboard-container .card-title {
+    font-weight: 600;
+}
+
+.dashboard-container .card-text.display-4 {
+    font-size: 3.5rem; /* Adjust size of the main value */
+}
+
+/* Ensure text is visible on warning card */
+.dashboard-container .card.bg-warning .card-title,
+.dashboard-container .card.bg-warning .card-text {
+    color: #333 !important;
+}
+
+/*Banner CSS*/
+.banner .btn-close{
+    height: 0 !important;
+}
